@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "akslabv2-4046"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "akslabv2-4046"
+  template:
+    metadata:
+      labels:
+        app: "akslabv2-4046"
+    spec:
+      containers:
+        - name: "akslabv2-4046"
+          image: "arcakslabv2.azurecr.io/akslabv2"
+          ports:
+          - containerPort: 80
